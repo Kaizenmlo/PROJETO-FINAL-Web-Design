@@ -1,0 +1,127 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+h5 {
+    color: black;
+}
+
+h5 p {
+    color: black;
+}
+
+body {
+    color: white;
+    font-size: 1.5em;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: white;
+}
+
+header {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    margin: 0; /* Corrigido de -1 para 0 */
+    padding: 1em;
+    background-color: orangered;
+    text-align: left;
+}
+
+/* LIVE PREVIEW */
+header a {
+    text-decoration: none;
+}
+
+header li {
+    list-style-type: none;
+    display: inline-block; /* Adicionado ponto e vírgula */
+}
+
+header li a {
+    font-family: fantasy;
+    display: inline-block;
+    padding: 0.5em 1em;
+    color: white;
+}
+
+header h1 a {
+    font-family: monospace;
+    font-weight: bold;
+    color: white;
+}
+
+div#container {
+    max-width: 70em;
+    margin: 1em auto;
+    background-color: black;
+    padding: 1em;
+}
+
+footer {
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 120%;
+    margin: 0; /* Corrigido de -1 para 0 */
+    padding: 2em;
+    background-color: orangered;
+}
+
+main {
+    padding: 5em;
+    background-color: whitesmoke;
+    width: 100%;
+}
+
+main p {
+    color: black;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    font: bold 1.5rem sans-serif;
+    text-transform: uppercase;
+    color: grey;
+}
+
+ul li {
+    padding: 0 .5em .25em;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    transition: 0.3s;
+}
+
+ul li:hover {
+    color: #fff;
+}
+
+ul li:before {
+    content: "";
+    position: absolute;
+    inset: calc(100% - 3px) 0 0 0;
+    background: white;
+    transform: scale(0, 1); /* Corrigido */
+    transition: transform 0.3s, background 0s 0.3s;
+}
+
+ul li:hover:before {
+    transform: scale(1); /* Corrigido */
+    transition: transform 0.3s;
+}
+
+/* Alternativa ao :has() */
+ul li:hover ~ li:before {
+    transform: translateX(-100%); /* Corrigido */
+    transition: transform 0.2s 0.2s, scale 0s 0.4s;
+}
+
+ul li:hover ~ li:hover:before {
+    transform: translateX(100%); /* Corrigido */
+    transition: transform 0.2s 0.2s, scale 0s 0.4s;
+}
